@@ -9,4 +9,7 @@
     <string name="updatePro">Update Profile</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
