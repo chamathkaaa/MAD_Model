@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ModelPaper</string>
+    <string name="username">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">LogIn</string>
+    <string name="register">Register</string>
+    <string name="dob">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="updatePro">Update Profile</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>
