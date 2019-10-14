@@ -51,8 +51,8 @@ public class DBHelper extends SQLiteOpenHelper {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(UserProfile.Users.COLUMN_1, username);
-        values.put(UserProfile.Users.COLUMN_1, dob);
-        values.put(UserProfile.Users.COLUMN_1, password);
+        values.put(UserProfile.Users.COLUMN_2, dob);
+        values.put(UserProfile.Users.COLUMN_3, password);
         values.put(UserProfile.Users.COLUMN_4, gender);
 
         // Insert the new row, returning the primary key value of the new row
@@ -78,7 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
-        String[] selectionArgs = { "username" };
+        String[] selectionArgs = { username };
 
         int count = db.update(
                 UserProfile.Users.TABLE_NAME,
@@ -101,7 +101,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String selection = UserProfile.Users.COLUMN_1 + " LIKE ?";
 
         // Specify arguments in placeholder order.
-        String[] selectionArgs = { "username" };
+        String[] selectionArgs = { username };
         // Issue SQL statement.
         int deletedRows = db.delete(UserProfile.Users.TABLE_NAME, selection, selectionArgs);
         return deletedRows;
@@ -109,6 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public List readAllInfor(){
 
+        String username = "uvini";
         SQLiteDatabase db = getReadableDatabase();
 
         // Define a projection that specifies which columns from the database
@@ -120,6 +121,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 UserProfile.Users.COLUMN_3,
                 UserProfile.Users.COLUMN_4
         };
+
+        // Filter results WHERE "title" = 'My Title'
+        String selection = UserProfile.Users.COLUMN_1 + " = ?";
+        String[] selectionArgs = { username };
+
 
         // How you want the results sorted in the resulting Cursor
         String sortOrder =
@@ -161,8 +167,8 @@ public class DBHelper extends SQLiteOpenHelper {
         };
 
         // Filter results WHERE "title" = 'My Title'
-        String selection = UserProfile.Users.COLUMN_1 + " = LIKE ?";
-        String[] selectionArgs = { "username" };
+        String selection = UserProfile.Users.COLUMN_1 + " LIKE ?";
+        String[] selectionArgs = { username };
 
         // How you want the results sorted in the resulting Cursor
         String sortOrder =
@@ -184,10 +190,10 @@ public class DBHelper extends SQLiteOpenHelper {
             String dob = cursor.getString(cursor.getColumnIndexOrThrow(UserProfile.Users.COLUMN_2));
             String password = cursor.getString(cursor.getColumnIndexOrThrow(UserProfile.Users.COLUMN_3));
             String gender = cursor.getString(cursor.getColumnIndexOrThrow(UserProfile.Users.COLUMN_4));
-            userInfo.add(user);
-            userInfo.add(dob);
-            userInfo.add(password);
-            userInfo.add(gender);
+            userInfo.add(user);//0
+            userInfo.add(dob);//1
+            userInfo.add(password);//2
+            userInfo.add(gender);//3
         }
         cursor.close();
 

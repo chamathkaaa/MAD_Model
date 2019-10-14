@@ -63,6 +63,10 @@ public class ProfileManagement extends AppCompatActivity {
                 }*/
 
                 Toast.makeText(ProfileManagement.this, "User Added Successfully "+newID, Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(getApplicationContext(), EditProfile.class);
+                startActivity(i);
+
             }
         });
     }
