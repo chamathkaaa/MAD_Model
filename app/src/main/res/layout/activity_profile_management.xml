@@ -17,7 +17,7 @@
         android:textColor="@android:color/black" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/usernamePM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -33,7 +33,7 @@
         android:textColor="@android:color/black" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/dobPM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -49,7 +49,7 @@
         android:textColor="@android:color/black" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/passwordPM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -70,14 +70,15 @@
         android:layout_margin="15dp">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/MalePM"
             android:layout_width="150dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
+            android:checked="true"
             android:text="@string/male" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/FemalePM"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_margin="15dp"
@@ -87,7 +88,13 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addBtnPM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add" />
+
+    <Button
+        android:id="@+id/updateBtnPM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"

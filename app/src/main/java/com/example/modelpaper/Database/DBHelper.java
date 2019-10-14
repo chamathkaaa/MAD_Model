@@ -93,7 +93,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void deleteInfo(String username){
+    public int deleteInfo(String username){
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -104,7 +104,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String[] selectionArgs = { "username" };
         // Issue SQL statement.
         int deletedRows = db.delete(UserProfile.Users.TABLE_NAME, selection, selectionArgs);
-
+        return deletedRows;
     }
 
     public List readAllInfor(){
@@ -193,4 +193,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return userInfo;
     }
+
 }
